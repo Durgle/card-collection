@@ -1,5 +1,5 @@
 
-# Collectible Card Collection Manager
+# Card Collection Manager
 
 A modern web application built with **Laravel 12**, **Vue 3**, **Inertia.js**, and **Tailwind CSS v4**. This platform enables users to create and manage personalized collections and decks of collectible cards, offering features like browsing existing cards and series.
 
