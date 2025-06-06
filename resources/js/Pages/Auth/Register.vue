@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import AppLayout from '@/Layouts/AppLayout.vue';
+import { trans } from 'laravel-vue-i18n';
+import BoxContainer from '@/Components/BoxContainer.vue';
 
 const form = useForm({
     name: '',
@@ -23,93 +25,59 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout>
-        <Head title="Register" />
+    <AppLayout :contentCentered="true">
 
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
+        <Head :title="trans('auth.sign_up')" />
 
-                <TextInput
-                    id="name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.name"
-                    required
-                    autofocus
-                    autocomplete="name"
-                />
+        <BoxContainer :title="trans('auth.sign_up')">
+            <form @submit.prevent="submit">
+                <div>
+                    <InputLabel for="name" :value="trans('data.username')" />
 
-                <InputError class="mt-2" :message="form.errors.name" />
-            </div>
+                    <TextInput id="name" type="text" class="mt-1 block w-full" v-model="form.name" required autofocus
+                        autocomplete="name" />
 
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
+                    <InputError class="mt-2" :message="form.errors.name" />
+                </div>
 
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autocomplete="username"
-                />
+                <div class="mt-4">
+                    <InputLabel for="email" :value="trans('data.email')" />
 
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
+                    <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required
+                        autocomplete="username" />
 
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                    <InputError class="mt-2" :message="form.errors.email" />
+                </div>
 
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="new-password"
-                />
+                <div class="mt-4">
+                    <InputLabel for="password" :value="trans('data.password')" />
 
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
+                    <TextInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required
+                        autocomplete="new-password" />
 
-            <div class="mt-4">
-                <InputLabel
-                    for="password_confirmation"
-                    value="Confirm Password"
-                />
+                    <InputError class="mt-2" :message="form.errors.password" />
+                </div>
 
-                <TextInput
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
-                />
+                <div class="mt-4">
+                    <InputLabel for="password_confirmation" :value="trans('data.confirm_password')" />
 
-                <InputError
-                    class="mt-2"
-                    :message="form.errors.password_confirmation"
-                />
-            </div>
+                    <TextInput id="password_confirmation" type="password" class="mt-1 block w-full"
+                        v-model="form.password_confirmation" required autocomplete="new-password" />
 
-            <div class="mt-4 flex items-center justify-end">
-                <Link
-                    :href="route('login')"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
-                >
-                    Already registered?
-                </Link>
+                    <InputError class="mt-2" :message="form.errors.password_confirmation" />
+                </div>
 
-                <PrimaryButton
-                    class="ms-4"
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Register
-                </PrimaryButton>
-            </div>
-        </form>
-    </GuestLayout>
+                <div class="mt-4 flex items-center justify-end">
+                    <Link :href="route('login')"
+                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800">
+                    {{ trans('auth.already_registered') }}
+                    </Link>
+
+                    <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        {{ trans('auth.sign_up') }}
+                    </PrimaryButton>
+                </div>
+            </form>
+        </BoxContainer>
+    </AppLayout>
 </template>

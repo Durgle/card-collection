@@ -1,0 +1,55 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bleuGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E0F2FE"/>
+      <stop offset="100%" stop-color="#7DD3FC"/>
+    </linearGradient>
+
+    <linearGradient id="foilGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <linearGradient id="commonGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9CA3AF"/>
+      <stop offset="100%" stop-color="#6B7280"/>
+    </linearGradient>
+
+    <filter id="outline">
+      <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2"></feMorphology>
+      <feFlood flood-color="#4B5563" flood-opacity="1" result="PINK"></feFlood>
+      <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE"></feComposite>
+      <feMerge>
+        <feMergeNode in="OUTLINE" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+  </defs>
+
+  <style>
+    .font {
+      font: bold 90px sans-serif;
+    }
+  </style>
+
+  <rect x="4" y="4" width="192" height="192" rx="6" fill="url(#bleuGradient)" stroke="#7DD3FC" stroke-width="6"/>
+
+  <g transform="rotate(-15 75 100)">
+    <rect x="30" y="30" width="70" height="100" rx="4" fill="url(#commonGradient)" stroke="#4B5563" stroke-width="2"/>
+    <rect x="40" y="40" width="50" height="40" rx="2" fill="#9CA3AF" stroke="#6B7280" stroke-width="1"/>
+  </g>
+
+  <g transform="rotate(0 100 100)">
+    <rect x="65" y="25" width="70" height="100" rx="4" fill="url(#foilGradient)" stroke="#EAB308" stroke-width="3"/>
+    <rect x="75" y="35" width="50" height="40" rx="2" fill="#FDE68A" stroke="#EAB308" stroke-width="1"/>
+  </g>
+
+  <g transform="rotate(15 125 100)">
+    <rect x="100" y="30" width="70" height="100" rx="4" fill="url(#commonGradient)" stroke="#4B5563" stroke-width="2"/>
+    <rect x="110" y="40" width="50" height="40" rx="2" fill="#9CA3AF" stroke="#6B7280" stroke-width="1"/>
+  </g>
+
+  <text x="35" y="170" fill="white" class="font" rx="1" filter="url(#outline)">CC</text>
+</svg>
