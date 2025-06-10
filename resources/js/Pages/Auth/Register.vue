@@ -1,29 +1,3 @@
-<script setup lang="ts">
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
-import AppLayout from '@/Layouts/AppLayout.vue';
-import { trans } from 'laravel-vue-i18n';
-import BoxContainer from '@/Components/BoxContainer.vue';
-
-const form = useForm({
-    name: '',
-    email: '',
-    password: '',
-    password_confirmation: '',
-});
-
-const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => {
-            form.reset('password', 'password_confirmation');
-        },
-    });
-};
-</script>
-
 <template>
     <AppLayout :contentCentered="true">
 
@@ -68,10 +42,9 @@ const submit = () => {
                 </div>
 
                 <div class="mt-4 flex items-center justify-end">
-                    <Link :href="route('login')"
-                        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800">
-                    {{ trans('auth.already_registered') }}
-                    </Link>
+                    <AppLink :href="route('login')">
+                        {{ trans('auth.already_registered') }}
+                    </AppLink>
 
                     <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                         {{ trans('auth.sign_up') }}
@@ -81,3 +54,30 @@ const submit = () => {
         </BoxContainer>
     </AppLayout>
 </template>
+
+<script setup lang="ts">
+import InputError from '@/Components/InputError.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
+import TextInput from '@/Components/TextInput.vue';
+import { Head, Link, useForm } from '@inertiajs/vue3';
+import AppLayout from '@/Layouts/AppLayout.vue';
+import { trans } from 'laravel-vue-i18n';
+import BoxContainer from '@/Components/BoxContainer.vue';
+import AppLink from '@/Components/AppLink.vue';
+
+const form = useForm({
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+});
+
+const submit = () => {
+    form.post(route('register'), {
+        onFinish: () => {
+            form.reset('password', 'password_confirmation');
+        },
+    });
+};
+</script>

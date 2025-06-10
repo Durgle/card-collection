@@ -11,7 +11,8 @@
 			</div>
 
 			<!-- Mobile menu toggle -->
-			<button @click="menuOpen = !menuOpen" class="sm:hidden text-blue-500 dark:text-cyan-300">
+			<button @click="menuOpen = !menuOpen"
+				class="sm:hidden text-blue-500 dark:text-sky-400 hover:text-blue-900 dark:hover:text-cyan-300">
 				<MenuIcon class="w-6 h-6 cursor-pointer" />
 			</button>
 

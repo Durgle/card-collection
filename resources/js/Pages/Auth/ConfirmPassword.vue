@@ -1,26 +1,3 @@
-<script setup lang="ts">
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, useForm } from '@inertiajs/vue3';
-import AppLayout from '@/Layouts/AppLayout.vue';
-import BoxContainer from '@/Components/BoxContainer.vue';
-import { trans } from 'laravel-vue-i18n';
-
-const form = useForm({
-    password: '',
-});
-
-const submit = () => {
-    form.post(route('password.confirm'), {
-        onFinish: () => {
-            form.reset();
-        },
-    });
-};
-</script>
-
 <template>
     <AppLayout :contentCentered="true">
 
@@ -28,7 +5,7 @@ const submit = () => {
 
             <Head :title="trans('auth.confirm_password')" />
 
-            <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+            <div class="mb-4 text-sm text-blue-700 dark:text-slate-400">
                 {{ trans('auth.confirm_password_disclaimer') }}
             </div>
 
@@ -51,3 +28,26 @@ const submit = () => {
 
     </AppLayout>
 </template>
+
+<script setup lang="ts">
+import InputError from '@/Components/InputError.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
+import TextInput from '@/Components/TextInput.vue';
+import { Head, useForm } from '@inertiajs/vue3';
+import AppLayout from '@/Layouts/AppLayout.vue';
+import BoxContainer from '@/Components/BoxContainer.vue';
+import { trans } from 'laravel-vue-i18n';
+
+const form = useForm({
+    password: '',
+});
+
+const submit = () => {
+    form.post(route('password.confirm'), {
+        onFinish: () => {
+            form.reset();
+        },
+    });
+};
+</script>

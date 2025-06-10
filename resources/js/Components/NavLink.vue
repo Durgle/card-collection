@@ -17,8 +17,8 @@ const props = defineProps<{
 
 const classes = computed(() =>
     props.active
-        ? 'text-blue-500 dark:text-cyan-300 hover:text-blue-900 dark:hover:text-slate-100 border-blue-500 dark:border-cyan-300 hover:border-blue-900 dark:hover:border-slate-100 sm:border-b-2'
-        : 'text-blue-500 dark:text-cyan-300 hover:text-blue-900 dark:hover:text-white focus:sm:border-b-2',
+        ? 'text-blue-500 dark:text-sky-400 hover:text-blue-900 dark:hover:text-cyan-300 border-blue-500 dark:border-cyan-300 hover:border-blue-900 dark:hover:border-cyan-300 sm:border-b-2'
+        : 'text-blue-500 dark:text-sky-400 hover:text-blue-900 dark:hover:text-cyan-300 focus:sm:border-b-2',
 
 );
 </script>
