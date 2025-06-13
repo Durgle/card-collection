@@ -6,13 +6,18 @@
             <slot />
         </div>
         <Footer />
+        <MobileNav v-if="!page.props.auth.user" />
     </main>
 </template>
 
 <script setup lang="ts">
 import Footer from '@/Components/Footer.vue';
 import NavBar from '@/Components/NavBar.vue';
+import MobileNav from '@/Components/MobileNav.vue';
 import { computed } from 'vue';
+import { usePage } from '@inertiajs/vue3';
+
+const page = usePage();
 
 const props = defineProps<{
     contentCentered?: boolean;

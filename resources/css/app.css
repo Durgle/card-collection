@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/forms';
 
+@source inline("grid-cols-{1,2,3,4,5,6}");
+@source inline("col-span-{1,2,3,4,5,6}");
+
 @utility highlight-text {
     @apply text-blue-500 dark:text-cyan-300;
+}
+
+@utility bar-height {
+    @apply h-16;
 }

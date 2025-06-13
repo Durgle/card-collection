@@ -1,7 +1,7 @@
 <template>
 	<nav
-		class="sticky top-0 z-50 px-4 py-3 bg-white dark:bg-slate-800/80 backdrop-blur dark:border-b dark:border-slate-700 shadow-md">
-		<div class="relative flex items-center justify-between max-w-6xl mx-auto">
+		class="bar-height ticky top-0 z-50 px-4 py-3 bg-white dark:bg-slate-800/80 backdrop-blur dark:border-b dark:border-slate-700 shadow-md">
+		<div class="h-full relative flex items-center justify-between max-w-6xl mx-auto">
 			<!-- Logo -->
 			<div class="flex items-center space-x-2">
 				<a :href="route('home')" class="flex items-center space-x-2" :aria-label="trans('global.home')">
@@ -36,12 +36,12 @@
 		<!-- Mobile dropdown -->
 		<div v-if="menuOpen"
 			class="absolute left-0 w-full h-full mt-3 text-center sm:hidden border-t dark:border-slate-700 shadow-md">
-			<ResponsiveNavLink :href="route('login')" :aria-label="trans('auth.login')"
+			<ResponsiveNavLink v-if="!page.props.auth.user" :href="route('login')" :aria-label="trans('auth.login')"
 				:active="route().current('login')">
 				{{ trans('auth.login') }}
 			</ResponsiveNavLink>
-			<ResponsiveNavLink :href="route('register')" :aria-label="trans('auth.sign_up')"
-				:active="route().current('register')">
+			<ResponsiveNavLink v-if="!page.props.auth.user" :href="route('register')"
+				:aria-label="trans('auth.sign_up')" :active="route().current('register')">
 				{{ trans('auth.sign_up') }}
 			</ResponsiveNavLink>
 		</div>

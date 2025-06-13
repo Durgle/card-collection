@@ -1,0 +1,1 @@
+export type MenuType  = 'game' | 'account' | 'manage';
