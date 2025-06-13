@@ -1,6 +1,6 @@
 <template>
     <div :class="[
-        'grid text-xs mx-auto justify-around items-center h-full border-t bg-white border-blue-900 dark:bg-slate-800  dark:border-slate-700 dark:text-slate-100 min-h-12',
+        'grid text-xs mx-auto justify-around items-center h-full border-t border-blue-900 dark:border-slate-700 dark:text-slate-100 min-h-12',
         gridCols
     ]">
         <slot />

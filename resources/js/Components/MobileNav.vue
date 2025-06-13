@@ -1,5 +1,6 @@
 <template>
-    <nav class="fixed bottom-0 left-0 right-0 z-50 sm:hidden" ref="navRef">
+    <nav class="fixed bottom-0 left-0 right-0 z-50 bg-white text-blue-900 dark:bg-slate-800 dark:text-slate-100 sm:hidden"
+        ref="navRef">
 
         <MobileSubNavBar v-if="expandedMenu === 'manage'">
             <MobileSubNavLink href="#" class="col-span-3">{{ trans('nav.collections') }}</MobileSubNavLink>
@@ -28,8 +29,7 @@
             </MobileSubNavLink>
         </MobileSubNavBar>
 
-        <div
-            class="text-xs bar-height flex justify-around items-center border-t bg-white border-blue-900 text-blue-900 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100">
+        <div class="text-xs bar-height flex justify-around items-center border-t border-blue-900 dark:border-slate-700">
             <MobileNavLink :href="route('home')">
                 <HomeIcon class="w-5 h-5 mb-1" /> {{ trans('nav.home') }}
             </MobileNavLink>
