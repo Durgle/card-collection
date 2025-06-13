@@ -6,7 +6,7 @@
             <slot />
         </div>
         <Footer />
-        <MobileNav v-if="!page.props.auth.user" />
+        <MobileNav v-if="page.props.auth.user" />
     </main>
 </template>
 
