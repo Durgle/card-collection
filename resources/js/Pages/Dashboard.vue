@@ -1,30 +1,17 @@
-<script setup lang="ts">
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
-</script>
-
 <template>
-    <Head title="Dashboard" />
 
-    <AuthenticatedLayout>
-        <template #header>
-            <h2
-                class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200"
-            >
-                Dashboard
-            </h2>
-        </template>
+    <Head :title="trans('dashboard.title')" />
 
-        <div class="py-12">
-            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <div
-                    class="overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800"
-                >
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
-                        You're logged in!
-                    </div>
-                </div>
+    <AppLayout>
+        <div class="py-12 bg-blue-100 dark:bg-slate-700 px-4 sm:px-0 flex-1">
+            <div class="max-w-6xl px-6 mx-auto">
             </div>
         </div>
-    </AuthenticatedLayout>
+    </AppLayout>
 </template>
+
+<script setup lang="ts">
+import AppLayout from '@/Layouts/AppLayout.vue';
+import { Head } from '@inertiajs/vue3';
+import { trans } from 'laravel-vue-i18n';
+</script>

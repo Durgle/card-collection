@@ -26,7 +26,7 @@ const props = defineProps<{
 const classes = computed(() =>
     props.contentCentered
         ? 'items-center justify-center'
-        : 'sm:pt-12',
+        : '',
 
 );
 </script>
