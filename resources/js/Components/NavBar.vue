@@ -53,8 +53,8 @@ import { ref } from 'vue';
 import { trans } from 'laravel-vue-i18n';
 import { MenuIcon } from 'lucide-vue-next';
 import { usePage } from '@inertiajs/vue3';
-import NavLink from './NavLink.vue';
-import ResponsiveNavLink from './ResponsiveNavLink.vue';
+import NavLink from '@/Components/NavLink.vue';
+import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 
 const menuOpen = ref(false)
 const page = usePage()
