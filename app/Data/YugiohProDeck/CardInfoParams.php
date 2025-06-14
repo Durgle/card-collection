@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DTO\Yugioh;
+namespace App\Data\YugiohProDeck;
 
 use Countable;
 use JsonSerializable;

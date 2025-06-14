@@ -1,6 +1,8 @@
 <?php
 
-use App\DTO\Yugioh\CardDto;
+namespace App\Data\YugiohProDeck;
+
+use App\Data\YugiohProDeck\CardDto;
 use Illuminate\Support\Collection;
 
 /**

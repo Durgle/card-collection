@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Data\YugiohProDeck;
+
 /**
  * Data Transfer Object representing card image URLs
  */

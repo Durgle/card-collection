@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Enums\Yugioh;
+
 /**
  * Enum representing a link marker direction for Link Monsters in Yu-Gi-Oh!
  */

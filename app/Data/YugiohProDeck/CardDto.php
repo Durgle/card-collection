@@ -1,12 +1,12 @@
 <?php
 
-namespace App\DTO\Yugioh;
+namespace App\Data\YugiohProDeck;
 
-use CardSetDto;
-use CardImageDto;
-use FrameType;
+use App\Data\YugiohProDeck\CardSetDto;
+use App\Data\YugiohProDeck\CardImageDto;
+use App\Enums\Yugioh\FrameType;
 use Illuminate\Support\Collection;
-use LinkMarker;
+use App\Enums\Yugioh\LinkMarker;
 
 /**
  * Data Transfer Object for a Yu-Gi-Oh! card

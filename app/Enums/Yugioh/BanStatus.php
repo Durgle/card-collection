@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Enums\Yugioh;
+
 /**
  * Enum representing the ban status categories for Yu-Gi-Oh! cards
  *

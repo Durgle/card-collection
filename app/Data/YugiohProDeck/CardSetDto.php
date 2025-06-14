@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Data\YugiohProDeck;
+
 /**
  * Data Transfer Object representing a Yu-Gi-Oh! card set
  */

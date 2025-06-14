@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Enums\Yugioh;
+
 /**
  * Enum representing the possible frame types of a Yu-Gi-Oh! card
  */

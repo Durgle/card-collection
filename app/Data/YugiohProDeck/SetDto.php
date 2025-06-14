@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Data\YugiohProDeck;
+
 use Illuminate\Support\Carbon;
 
 /**

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Enums\Yugioh;
+
 /**
  * Enum representing the card format types
  *

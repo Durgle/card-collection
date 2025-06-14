@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Data\YugiohProDeck;
+
 /**
  * Data Transfer Object for card archetype
  */
