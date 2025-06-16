@@ -3,11 +3,11 @@
 namespace App\Services;
 
 use Exception;
-use ApiResponseDto;
-use App\DTO\Yugioh\CardInfoParams;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
+use App\Data\YugiohProDeck\ApiResponseDto;
+use App\Data\YugiohProDeck\CardInfoParams;
 
 class YugiohProDeckService
 {
