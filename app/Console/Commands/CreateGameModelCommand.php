@@ -75,7 +75,7 @@ class CreateGameModelCommand extends GeneratorCommand
     {
         $game = Str::snake($this->getGameInput());
         $name = Str::snake($this->getNameInput());
-        return Str::snake(Str::pluralStudly("{$game}_{$name}"));
+        return Str::plural("{$game}_{$name}");
     }
 
     /**
