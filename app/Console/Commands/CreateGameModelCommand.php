@@ -73,7 +73,9 @@ class CreateGameModelCommand extends GeneratorCommand
      */
     protected function getTableName()
     {
-        return Str::snake(Str::pluralStudly($this->getGameInput() . '_' . $this->getNameInput()));
+        $game = Str::snake($this->getGameInput());
+        $name = Str::snake($this->getNameInput());
+        return Str::snake(Str::pluralStudly("{$game}_{$name}"));
     }
 
     /**
@@ -84,7 +86,7 @@ class CreateGameModelCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        $gameName = Str::ucfirst($this->getGameInput());
+        $gameName = Str::studly($this->getGameInput());
 
         return "{$rootNamespace}\\Models\\{$gameName}";
     }

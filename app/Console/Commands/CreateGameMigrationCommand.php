@@ -40,7 +40,7 @@ class CreateGameMigrationCommand extends MigrationGeneratorCommand
      */
     protected function migrationTableName()
     {
-        return Str::snake(Str::pluralStudly($this->getGameInput() . '_' . $this->getNameInput()));
+        return Str::snake(Str::pluralStudly("{$this->getGameInput()}_{$this->getNameInput()}"));
     }
 
     /**
@@ -50,7 +50,7 @@ class CreateGameMigrationCommand extends MigrationGeneratorCommand
      */
     protected function getGameInput()
     {
-        return Str::lower(trim($this->argument('game')));
+        return Str::snake(trim($this->argument('game')));
     }
 
     /**
@@ -60,7 +60,7 @@ class CreateGameMigrationCommand extends MigrationGeneratorCommand
      */
     protected function getNameInput()
     {
-        return Str::lower(trim($this->argument('name')));
+        return Str::snake(trim($this->argument('name')));
     }
 
     /**
