@@ -3,9 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Console\GeneratorCommand;
-use Symfony\Component\Console\Output\BufferedOutput;
 
 class CreateGameModelCommand extends GeneratorCommand
 {
@@ -14,7 +12,7 @@ class CreateGameModelCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'make:game-model {game} {name} {--m|migration}';
+    protected $signature = 'make:game-model {game} {name} {--m|migration} {--f|factory}';
 
     /**
      * The console command description.
@@ -101,13 +99,31 @@ class CreateGameModelCommand extends GeneratorCommand
     protected function replaceClass($stub, $name)
     {
         $class = str_replace($this->getNamespace($name) . '\\', '', $name);
+        $gameName = Str::studly($this->getGameInput());
 
         $replace = [
             '{{ class }}' => $class,
+            '{{ game }}' => $gameName,
             '{{ table }}' => $this->getTableName(),
         ];
 
         return str_replace(array_keys($replace), array_values($replace), $stub);
+    }
+
+    /**
+     * Create a model factory for the model.
+     *
+     * @return void
+     */
+    protected function createFactory()
+    {
+        $factory = Str::studly($this->getNameInput());
+        $gameName = Str::studly($this->getGameInput());
+
+        $this->call('make:factory', [
+            'name' => "{$gameName}/{$factory}Factory",
+            '--model' => $this->qualifyClass($this->getNameInput()),
+        ]);
     }
 
     /**
@@ -122,6 +138,10 @@ class CreateGameModelCommand extends GeneratorCommand
 
         if (parent::handle() === false) {
             return false;
+        }
+
+        if ($this->option('factory')) {
+            $this->createFactory();
         }
 
         if ($this->option('migration')) {
