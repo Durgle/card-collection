@@ -7,14 +7,14 @@ namespace App\Enums\Yugioh;
  */
 enum LinkMarker: string
 {
-    case BOTTOM_LEFT = 'Bottom-Left';
-    case BOTTOM = 'Bottom';
-    case BOTTOM_RIGHT = 'Bottom-Right';
-    case LEFT = 'Left';
-    case RIGHT = 'Right';
-    case TOP_LEFT = 'Top-Left';
-    case TOP = 'Top';
-    case TOP_RIGHT = 'Top-Right';
+    case BOTTOM_LEFT = 'bottom-left';
+    case BOTTOM = 'bottom';
+    case BOTTOM_RIGHT = 'bottom-right';
+    case LEFT = 'left';
+    case RIGHT = 'right';
+    case TOP_LEFT = 'top-left';
+    case TOP = 'top';
+    case TOP_RIGHT = 'top-right';
 
     /**
      * Converts an array of strings to an array of valid LinkMarker enums.

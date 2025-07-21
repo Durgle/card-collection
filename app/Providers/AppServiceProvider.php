@@ -20,6 +20,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->loadMigration();
         Vite::prefetch(concurrency: 3);
+    }
+
+    /**
+     * Load all migration files from the migrations directory.
+     */
+    private function loadMigration()
+    {
+        $migrationPath = database_path('migrations');
+        $directories = glob($migrationPath . "/*", GLOB_ONLYDIR);
+        $paths = array_merge([$migrationPath], $directories);
+        $this->loadMigrationsFrom($paths);
     }
 }
