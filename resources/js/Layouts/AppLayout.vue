@@ -1,38 +1,18 @@
 <template>
-    <main
-        class="flex flex-col min-h-screen bg-neutral-100 dark:bg-slate-900 text-blue-900 dark:text-slate-100 transition">
-        <NavBar />
-        <div class="content flex-1 flex flex-col" :class="classes">
+    <div class="min-h-screen text-white dark:text-slate-100 bg-white dark:bg-slate-800">
+        <Nav />
+        <main class="px-0 py-[60px] md:py-0"
+            :class="{ 'md:pl-[60px]': !ui.navExtended, 'md:pl-[300px]': ui.navExtended }">
             <slot />
-        </div>
-        <Footer />
-        <MobileNav v-if="page.props.auth.user" />
-    </main>
+        </main>
+    </div>
 </template>
 
 <script setup lang="ts">
-import Footer from '@/Components/Footer.vue';
-import NavBar from '@/Components/NavBar.vue';
-import MobileNav from '@/Components/MobileNav.vue';
-import { computed } from 'vue';
-import { usePage } from '@inertiajs/vue3';
 
-const page = usePage();
+import Nav from '@/Components/Nav.vue';
+import { useUiStore } from '@/stores/ui';
 
-const props = defineProps<{
-    contentCentered?: boolean;
-}>();
+const ui = useUiStore()
 
-const classes = computed(() =>
-    props.contentCentered
-        ? 'items-center justify-center'
-        : '',
-
-);
 </script>
-
-<style scoped>
-.content > * {
-    width: 100%;
-}
-</style>

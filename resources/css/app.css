@@ -11,3 +11,7 @@
 @utility bar-height {
     @apply h-16;
 }
+
+@utility focus-ring-cyan {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400;
+}

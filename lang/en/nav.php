@@ -1,5 +1,6 @@
 <?php
 return [
+    'label' => 'Main Navigation',
     'home' => 'Home',
     'my_place' => 'My Place',
     'collections' => 'Collections',
@@ -13,6 +14,7 @@ return [
     'final_fantasy' => 'Final Fantasy',
     'magic' => 'Magic: The Gathering',
     'acccount' => 'My Account',
+    'friends' => 'Friends',
     'profile' => 'Profile',
     'message' => 'Message',
     'logout' => 'Logout',

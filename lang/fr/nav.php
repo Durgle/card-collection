@@ -1,5 +1,6 @@
 <?php
 return [
+    'label' => 'Navigation principale',
     'home' => 'Accueil',
     'my_place' => 'Mon Espace',
     'collections' => 'Collections',
@@ -13,6 +14,8 @@ return [
     'final_fantasy' => 'Final Fantasy',
     'magic' => 'Magic: The Gathering',
     'acccount' => 'Mon Compte',
+    'profile' => 'Profil',
+    'friends' => 'Amis',
     'profile' => 'Profil',
     'message' => 'Message',
     'logout' => 'Déconnexion',
