@@ -1,5 +1,11 @@
 <?php
 return [
+    'nav' => [
+        'news' => 'News',
+        'search' => 'Search',
+        'decks' => 'Decks',
+        'banlist' => 'Banlist',
+    ],
     'card_attributes' => [
         'light' => 'Light',
         'dark' => 'Dark',
