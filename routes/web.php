@@ -19,11 +19,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('yugioh')->name('yugioh.')->group(function () {
-    Route::get('/', fn() => Inertia::render('Games/Yugioh/Yugioh'))->name('index');
-    Route::get('/search', fn() => Inertia::render('Games/Yugioh/Search'))->name('search');
-    Route::get('/set', fn() => Inertia::render('Games/Yugioh/Set'))->name('sets');
-    Route::get('/deck', fn() => Inertia::render('Games/Yugioh/Deck'))->name('decks');
-    Route::get('/banlist', fn() => Inertia::render('Games/Yugioh/Banlist'))->name('banlist');
+    Route::get('/', fn() => Inertia::render('Games/Yugioh/News'))->name('news.index');
+    Route::get('/database', fn() => Inertia::render('Games/Yugioh/Database'))->name('database.index');
+    Route::get('/cards', fn() => Inertia::render('Games/Yugioh/CardList'))->name('cards.index');
+    Route::get('/cards/{id}', fn() => Inertia::render('Games/Yugioh/Card'))->name('cards.show');
+    Route::get('/sets', fn() => Inertia::render('Games/Yugioh/SetList'))->name('sets.index');
+    Route::get('/sets/{id}', fn() => Inertia::render('Games/Yugioh/Set'))->name('sets.show');
+    Route::get('/decks', fn() => Inertia::render('Games/Yugioh/DeckList'))->name('decks.index');
+    Route::get('/decks/{id}', fn() => Inertia::render('Games/Yugioh/Deck'))->name('decks.show');
+    Route::get('/banlist', fn() => Inertia::render('Games/Yugioh/Banlist'))->name('banlist.index');
 });
 
 require __DIR__ . '/auth.php';
