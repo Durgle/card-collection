@@ -1,8 +1,8 @@
 <template>
     <div>
         <button
-            class="h-full md:h-[60px] w-full text-xs md:text-base flex flex-col md:flex-row items-center gap-0.5 md:gap-4 md:p-3.5 md:rounded justify-center cursor-pointer hover:bg-slate-700 focus-ring-cyan"
-            :class="{ 'text-cyan-300 bg-slate-800 md:mb-1': isOpen, 'md:justify-center': !ui.navExtended, 'md:justify-normal': ui.navExtended }"
+            class="h-full md:h-(--nav-item-height) w-full text-xs md:text-base flex flex-col md:flex-row items-center gap-0.5 md:gap-4 md:p-3.5 md:rounded justify-center cursor-pointer hover:bg-blue-600 dark:hover:bg-slate-700 focus-ring-blue"
+            :class="{ 'text-yellow-300 dark:text-cyan-300 bg-blue-600/50 dark:bg-slate-800 md:mb-1': isOpen, 'md:justify-center': !ui.navExtended, 'md:justify-normal': ui.navExtended }"
             :ariaExpanded="isOpen.toString()" aria-haspopup="menu" :title="label" @click="toggle">
             <component :is="icon" class="shrink-0" aria-hidden="true" />
             <span class="max-w-full truncate px-1" :class="{ 'md:hidden': !ui.navExtended }">{{ label }}</span>
@@ -10,7 +10,7 @@
                 v-show="ui.navExtended" />
         </button>
         <div v-show="isOpen"
-            class="fixed md:static bottom-[60px] left-0 w-full bg-slate-600 md:bg-inherit grid grid-cols-2 md:grid-cols-1 border-t md:border-t-0 border-slate-600 z-50 text-xs md:text-base gap-[1px] md:gap-1"
+            class="fixed md:static bottom-(--mobile-nav-height) left-0 w-full bg-blue-700 dark:bg-slate-900 md:bg-inherit grid grid-cols-2 md:grid-cols-1 border-t md:border-t-0 border-blue-700 dark:border-slate-600 z-50 text-xs md:text-base gap-[1px] md:gap-1"
             @keydown.esc="close" tabindex="-1">
             <slot />
         </div>

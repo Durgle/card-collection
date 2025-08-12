@@ -1,6 +1,6 @@
 <template>
     <div class="p-5 rounded bg-blue-200 dark:bg-slate-800">
-        <h3 class="mb-1 text-lg font-bold text-blue-700 dark:text-white">
+        <h3 class="mb-1 text-lg font-bold text-blue-700 dark:text-slate-100">
             <slot name="title">
                 {{ title }}
             </slot>

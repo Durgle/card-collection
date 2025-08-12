@@ -1,12 +1,12 @@
 <template>
-    <AppLayout>
+    <YugiohLayout>
 
         <Head :title="trans('yugioh.nav.deck', { name: 'Lorem Ipsum' })" />
-    </AppLayout>
+    </YugiohLayout>
 </template>
 
 <script setup lang="ts">
-import AppLayout from '@/Layouts/AppLayout.vue';
+import YugiohLayout from '@/Layouts/YugiohLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { trans } from 'laravel-vue-i18n';
 </script>

@@ -1,7 +1,7 @@
 <template>
     <section class="px-4 py-12 dark:bg-slate-900 sm:px-0 text-blue-700 dark:text-slate-300">
         <div class="max-w-6xl px-6 mx-auto text-center">
-            <h2 class="mb-3 text-2xl font-bold text-blue-900 dark:text-white sm:text-3xl">
+            <h2 class="mb-3 text-2xl font-bold text-blue-900 dark:text-slate-100 sm:text-3xl">
                 {{ trans('home.game.title') }}
             </h2>
             <p class="mb-10">{{ trans('home.game.description') }}</p>

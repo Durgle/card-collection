@@ -1,17 +1,23 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/forms';
+@plugin 'tailwind-scrollbar';
 
-@source inline("grid-cols-{1,2,3,4,5,6}");
-@source inline("col-span-{1,2,3,4,5,6}");
+@theme {
+    --nav-width: 60px;
+    --mobile-nav-height: var(--nav-width);
+    --nav-item-height: 60px;
+    --expanded-nav-width: 250px;
+    --subnav-height: var(--nav-width);
+}
 
 @utility highlight-text {
     @apply text-blue-500 dark:text-cyan-300;
 }
 
-@utility bar-height {
-    @apply h-16;
+@utility focus-ring-blue {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 dark:focus-visible:ring-cyan-400;
 }
 
-@utility focus-ring-cyan {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400;
+@utility lite-scrollbar {
+    @apply scrollbar-thin dark:scrollbar-thumb-slate-700 scrollbar-thumb-white scrollbar-track-transparent;
 }
