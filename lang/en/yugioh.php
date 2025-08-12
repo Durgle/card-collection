@@ -2,9 +2,14 @@
 return [
     'nav' => [
         'news' => 'News',
-        'search' => 'Search',
         'decks' => 'Decks',
+        'deck' => 'Deck : :name',
         'banlist' => 'Banlist',
+        'database' => 'Database',
+        'card' => 'Card : :name',
+        'cards' => 'Cards',
+        'sets' => 'Sets',
+        'set' => 'Set : :name',
     ],
     'card_attributes' => [
         'light' => 'Light',

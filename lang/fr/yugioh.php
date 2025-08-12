@@ -1,10 +1,15 @@
 <?php
 return [
     'nav' => [
-        'news' => 'Actualité',
-        'search' => 'Recherche',
+        'news' => 'Actualités',
         'decks' => 'Decks',
+        'deck' => 'Deck : :name',
         'banlist' => 'Banlist',
+        'database' => 'Base de données',
+        'card' => 'Carte : :name',
+        'cards' => 'Cartes',
+        'sets' => 'Extensions',
+        'set' => 'Extension : :name',
     ],
     'card_attributes' => [
         'light' => 'Lumière',
